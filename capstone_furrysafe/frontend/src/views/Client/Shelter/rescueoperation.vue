@@ -3,9 +3,9 @@
 import textvalue from '@/components/textString.vue'
 import datetoday from '@/components/dateCard.vue'
 import linkfooter from '@/components/footerLink.vue'
-import reports from '@/components/shelter/shelter_RescueOp_ReportsCard.vue'
-import reportview from '@/components/shelter/shelter_RescueOp_ViewReport.vue'
-import chats from '@/components/shelter/shelter_RescueOp_ChatBox.vue'
+import reports from '@/components/Shelter/shelter_RescueOp_ReportsCard.vue'
+import reportview from '@/components/Shelter/shelter_RescueOp_ViewReport.vue'
+import chats from '@/components/Shelter/shelter_RescueOp_ChatBox.vue'
 
 export default {
     components: {

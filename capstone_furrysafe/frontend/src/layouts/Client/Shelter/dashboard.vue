@@ -187,8 +187,8 @@ import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessu
 import { Bars3Icon, XMarkIcon, IdentificationIcon, HomeModernIcon, ChatBubbleLeftRightIcon, RectangleGroupIcon, DocumentPlusIcon, SparklesIcon } from '@heroicons/vue/24/outline'
 import { PuzzlePieceIcon, ArrowRightStartOnRectangleIcon } from '@heroicons/vue/20/solid'
 //my components for popup modals
-import popupNewpost from '@/components/shelter/shelter_NewPostModal.vue'
-import popupNewEvent from '@/components/shelter/shelter_EventPostModal.vue'
+import popupNewpost from '@/components/Shelter/shelter_NewPostModal.vue'
+import popupNewEvent from '@/components/Shelter/shelter_EventPostModal.vue'
 // import test from '@/components/pin_MapModal.vue'
 
 //my components for popup modals

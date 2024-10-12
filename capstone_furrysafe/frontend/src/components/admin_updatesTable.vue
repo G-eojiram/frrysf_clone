@@ -1,47 +1,47 @@
 <script setup>
-    import { onMounted, ref } from 'vue';
-    import axios from 'axios';
-    import { useRouter } from 'vue-router'; // Make sure to import useRouter if you're using RouterLink
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import { useRouter } from 'vue-router'; // Make sure to import useRouter if you're using RouterLink
 
-    const requests = ref([
-        {
-            id: 1,
-            name: 'Dolends Animal Shelter',
-            createdAt: 'Sept 30',
-            email: 'exampleShelter@gmail.com',
-            status: 'Pending',
-        },
-    ]);
+const requests = ref([
+    {
+        id: 1,
+        name: 'Dolends Animal Shelter',
+        createdAt: 'Sept 30',
+        email: 'exampleShelter@gmail.com',
+        status: 'Pending',
+    },
+]);
 
-    function categorizedRequests() {
-        const categorized = {
-            Pending: [],
-            Approved: [],
-            Rejected: [],
-        };
-        requests.value.forEach(request => {
-            categorized[request.status].push(request);
-        });
-        return categorized;
-    }
-
-    async function getRequests(){
-        try{
-            const response = await axios.post("http://localhost:5000/registration");
-            requests.value = response.data;
-            if (!response.data || response.data.length === 0) {
-                console.log("Request not found");
-            }
-        }
-        catch(err){
-            console.log("error in getting requests", err)
-        }
-    }
-
-
-    onMounted(() => {
-        getRequests();
+function categorizedRequests() {
+    const categorized = {
+        Pending: [],
+        Approved: [],
+        Rejected: [],
+    };
+    requests.value.forEach(request => {
+        categorized[request.status].push(request);
     });
+    return categorized;
+}
+
+async function getRequests() {
+    try {
+        const response = await axios.post("http://localhost:5000/registration");
+        requests.value = response.data;
+        if (!response.data || response.data.length === 0) {
+            console.log("Request not found");
+        }
+    }
+    catch (err) {
+        console.log("error in getting requests", err)
+    }
+}
+
+
+onMounted(() => {
+    getRequests();
+});
 </script>
 <template>
     <div>
@@ -55,7 +55,8 @@
                         <div class="my-[1rem]">
                             <div class="mb-[1rem]">
                                 <span class="flex gap-3 text-[14px]">Shelter's Name:
-                                    <h1 class="font-bold text-gray-600 text-[14px] flex gap-3">{{ list.sheltername }}</h1>
+                                    <h1 class="font-bold text-gray-600 text-[14px] flex gap-3">{{ list.sheltername }}
+                                    </h1>
                                 </span>
                                 <span class="flex gap-5 text-[14px]">Email Address:
                                     <p class="font-semibold text-[13px]">{{ list.email }}</p>

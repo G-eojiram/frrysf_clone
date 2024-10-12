@@ -4,7 +4,8 @@
             <dl class="divide-y divide-gray-100">
                 <div class="bg-gray-50 px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-3">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Shelter's Name</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ requestDetail.sheltername }}
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ requestDetail.sheltername
+                        }}
                     </dd>
                 </div>
                 <div class="bg-white px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-3">
@@ -18,7 +19,8 @@
                         <span
                             class="inline-flex items-center rounded-md bg-red-50 px-3 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-green-600/20">
                             {{ requestDetail.status }}
-                        </span></div>
+                        </span>
+                    </div>
                 </div>
                 <div class="bg-white px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-3">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
@@ -99,12 +101,12 @@ export default {
                 const documentsArray = this.requestDetail.documents.split(',').map(doc => doc.trim());
                 this.document1 = documentsArray[0] || '';
                 this.document2 = documentsArray[1] || '';
-            } 
+            }
         },
-        async retrieveFiles(){
-            try{
+        async retrieveFiles() {
+            try {
                 let id = this.requestDetail.shelterid
-                const response = await axios.get(`http://localhost:5000/request_preview/${id}/image`, 
+                const response = await axios.get(`http://localhost:5000/request_preview/${id}/image`,
                     {
                         params: {
                             document_1: this.document1,
@@ -119,19 +121,19 @@ export default {
                 if (this.isValidImageUrl(Url1)) {
                     this.imgDocuments.push({ imgUrl: Url1 });
                 }
-                else if(this.isValidFileUrl(Url1)){
+                else if (this.isValidFileUrl(Url1)) {
                     const filename = this.getFilenameFromUrl(Url1)
-                    this.fileDocuments.push({filename: filename, fileurl: Url1})
+                    this.fileDocuments.push({ filename: filename, fileurl: Url1 })
                 }
                 if (this.isValidImageUrl(Url2)) {
                     this.imgDocuments.push({ imgUrl: Url2 });
                 }
-                else if(this.isValidFileUrl(Url2)){
+                else if (this.isValidFileUrl(Url2)) {
                     const filename = this.getFilenameFromUrl(Url2)
-                    this.fileDocuments.push({ filename: filename, fileurl: Url1})
+                    this.fileDocuments.push({ filename: filename, fileurl: Url1 })
                 }
             }
-            catch(err){
+            catch (err) {
                 console.log("error retrieving image", err)
             }
         },
@@ -151,38 +153,38 @@ export default {
     },
     props: {
         requestDetail: {
-        type: Object,
-        default: () => ({
-            shelterid: '',
-            sheltername: '',
-            email: '',
-            documents: [],
-            status: 'test'
-        })
+            type: Object,
+            default: () => ({
+                shelterid: '',
+                sheltername: '',
+                email: '',
+                documents: [],
+                status: 'test'
+            })
         }
     },
     watch: {
-    requestDetail: {
-        handler(newValue) {
-            // Extracting the data from Proxy (if needed)
-            if (newValue && newValue.length > 0) {
-                let shelterDetails = newValue[0]; // Assuming you're dealing with a single object
+        requestDetail: {
+            handler(newValue) {
+                // Extracting the data from Proxy (if needed)
+                if (newValue && newValue.length > 0) {
+                    let shelterDetails = newValue[0]; // Assuming you're dealing with a single object
 
-                // Assign the values to the requestDetail prop if required
-                this.requestDetail.shelterid = shelterDetails.id;
-                this.requestDetail.sheltername = shelterDetails.sheltername;
-                this.requestDetail.email = shelterDetails.email;
-                this.requestDetail.documents = shelterDetails.documents;
-                this.requestDetail.status = shelterDetails.status;
-                
-                this.initializeDocuments();
-                this.retrieveFiles()
+                    // Assign the values to the requestDetail prop if required
+                    this.requestDetail.shelterid = shelterDetails.id;
+                    this.requestDetail.sheltername = shelterDetails.sheltername;
+                    this.requestDetail.email = shelterDetails.email;
+                    this.requestDetail.documents = shelterDetails.documents;
+                    this.requestDetail.status = shelterDetails.status;
 
-                console.log(this.requestDetail.status);
-            }
-        },
-        immediate: true // Log immediately when the prop is passed
-    }
+                    this.initializeDocuments();
+                    this.retrieveFiles()
+
+                    console.log(this.requestDetail.status);
+                }
+            },
+            immediate: true // Log immediately when the prop is passed
+        }
     }
 }
 </script>

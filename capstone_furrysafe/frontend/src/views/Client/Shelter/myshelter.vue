@@ -1,14 +1,14 @@
 <script>
 import textvalue from '@/components/textString.vue'
 import datetoday from '@/components/dateCard.vue'
-import profileCard from '@/components/shelter/shelter_ProfileCard.vue'
-import detailCard from '@/components/shelter/shelter_DetailsCard.vue'
+import profileCard from '@/components/Shelter/shelter_ProfileCard.vue'
+import detailCard from '@/components/Shelter/shelter_DetailsCard.vue'
 import linkfooter from '@/components/footerLink.vue'
 
 // pop-up modals
-import popupNewpost from '@/components/shelter/shelter_NewPostModal.vue'
-import popupNewEvent from '@/components/shelter/shelter_EventPostModal.vue'
-import eventsCard from '@/components/shelter/shelter_EventFeaturedCard.vue'
+import popupNewpost from '@/components/Shelter/shelter_NewPostModal.vue'
+import popupNewEvent from '@/components/Shelter/shelter_EventPostModal.vue'
+import eventsCard from '@/components/Shelter/shelter_EventFeaturedCard.vue'
 
 export default {
     components: {

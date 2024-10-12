@@ -17,23 +17,23 @@ import details from '../views/Admin/manage_animaldetails.vue'
 import mockup from '../views/mockup.vue'
 
 // Shelter Views
-import shelterdashboardContent from '../views/Shelter/dashboard.vue'
-import shelterprofile from "../views/Shelter/myshelter.vue";
-import shelteranimalprofile from "../views/Shelter/animalprofile.vue"
-import rescueoperation from "../views/Shelter/rescueoperation.vue"
+import shelterdashboardContent from '../views/Client/Shelter/dashboard.vue'
+import shelterprofile from "../views/Client/Shelter/myshelter.vue";
+import shelteranimalprofile from "../views/Client/Shelter/animalprofile.vue"
+import rescueoperation from "../views/Client/Shelter/rescueoperation.vue"
 
 // Rescue Operation
-import viewreportdetails from '@/components/shelter/shelter_RescueOp_ViewReport.vue'
+import viewreportdetails from '@/components/Shelter/shelter_RescueOp_ViewReport.vue'
 
 // my shelter feed, view post, edit profile
-import shelterfeed from "../components/shelter/shelter_NewsfeedCard.vue"
-import shelterviewpost from "../components/shelter/shelter_ViewPostCard.vue"
-import editshelterprofile from "../views/Shelter/myshelter_EditProfile.vue";
+import shelterfeed from "../components/Shelter/shelter_NewsfeedCard.vue"
+import shelterviewpost from "../components/Shelter/shelter_ViewPostCard.vue"
+import editshelterprofile from "../views/Client/Shelter/myshelter_EditProfile.vue";
 
 // animal profile
-import createanimalprofile from "../views/Shelter/animalprofile_CreateNewProfile.vue"
-import viewanimalprofile from "../views/Shelter/animalprofile_ViewProfile.vue"
-import editanimalprofile from "../views/Shelter/animalprofile_EditProfile.vue"
+import createanimalprofile from "../views/Client/Shelter/animalprofile_CreateNewProfile.vue"
+import viewanimalprofile from "../views/Client/Shelter/animalprofile_ViewProfile.vue"
+import editanimalprofile from "../views/Client/Shelter/animalprofile_EditProfile.vue"
 
 //jene 
 import login from "../views/login.vue"

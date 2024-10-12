@@ -79,8 +79,8 @@ export default {
 import textvalue from '@/components/textString.vue'
 import datetoday from '@/components/dateCard.vue'
 import linkfooter from '@/components/footerLink.vue'
-import updatescard from '@/components/shelter/shelter_Dashboard_Activities.vue';
-import statsCard from '@/components/shelter/shelter_Dashboard_statsCard.vue';
+import updatescard from '@/components/Shelter/shelter_Dashboard_Activities.vue';
+import statsCard from '@/components/Shelter/shelter_Dashboard_statsCard.vue';
 import displaymap from '@/components/Map.vue';
 import mapoverlay from '@/components/pin_MapModal.vue'
 

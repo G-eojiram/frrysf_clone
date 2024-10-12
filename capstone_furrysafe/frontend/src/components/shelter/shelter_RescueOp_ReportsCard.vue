@@ -1,6 +1,6 @@
 <script>
 import { EyeIcon } from "@heroicons/vue/20/solid";
-import statusbuttons from '@/components/shelter/shelter_ReportStatusButtons.vue'
+import statusbuttons from '@/components/Shelter/shelter_ReportStatusButtons.vue'
 import { RouterLink } from 'vue-router';
 
 export default {

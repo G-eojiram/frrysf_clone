@@ -20,7 +20,7 @@ export default {
 </script>
 <template>
     <div class="flex justify-center items-center h-full">
-        <div class="border rounded-lg bg-white w-full h-fit mb-4">
+        <div class="border rounded-lg bg-white sm:w-full xl:w-[80%] h-fit mb-4">
             <div class="px-[2rem] py-[10px] border-b-2 flex items-center gap-x-2 text-gray-600">
 
                 <RouterLink class="hover:text-gray-900 hover:underline">

@@ -353,7 +353,7 @@ async function retrieveData(){
     }
     else{
         if (toastRef.value) {
-            toastRef.value.showToast('Error: Missing inputs');
+            toastRef.value.showToast('warning', 'Missing inputs');
         }
         // console.log("empty isa heee", name_, gender_, status_, pet_, pet2_, steril_,steril2_)
     }
@@ -372,7 +372,8 @@ async function savePetProfile(formData){ //Save pet profile, pet profile photo, 
     }
     catch(err){
         if (toastRef.value) {
-            toastRef.value.showToast(err);
+            // toastRef.value.showToast(err);
+            toastRef.value.showToast('error', err);
         }
         console.log("error", err)
     }

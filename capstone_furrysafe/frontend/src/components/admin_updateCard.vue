@@ -12,32 +12,32 @@
         </div>
     </div>
 </template>
-  
+
 <script setup>
-    import { onMounted, ref} from 'vue';
-    import axios from 'axios';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
 
-    const stats = ref([])
+const stats = ref([])
 
-    async function retrieveStatus(){
-        try{
-            const response = await axios.get("http://localhost:5000/status")
+async function retrieveStatus() {
+    try {
+        const response = await axios.get("http://localhost:5000/status")
 
-            response.data.forEach(item => {
-                stats.value.push({
-                    status: item.status,
-                    count: item.count
-                });
+        response.data.forEach(item => {
+            stats.value.push({
+                status: item.status,
+                count: item.count
             });
-            console.log(stats)
-        }
-        catch(err){
-            console.log("error", err)
-        }
+        });
+        console.log(stats)
     }
+    catch (err) {
+        console.log("error", err)
+    }
+}
 
-    onMounted(() => {
-        retrieveStatus();
-    });
+onMounted(() => {
+    retrieveStatus();
+});
 
 </script>
